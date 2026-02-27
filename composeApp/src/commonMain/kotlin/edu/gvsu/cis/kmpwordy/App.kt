@@ -9,8 +9,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
+import edu.gvsu.cis.kmpwordy.ui.WordScreen
 
 @Composable
 @Preview
@@ -24,7 +23,7 @@ fun App() {
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             // The error: "the arg is not within bounds..." can be ignored
-            val vm: AppViewModel =  AppViewModel()
+            val vm: AppViewModel = AppViewModel()
             WordScreen(viewModel = vm)
         }
     }

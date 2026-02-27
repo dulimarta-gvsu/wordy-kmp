@@ -11,6 +11,8 @@ struct WordScreenView: View {
             Button("Restart") {
                 vm.selectRandomLetters()
             }
+            .buttonStyle(.borderedProminent)
+            .buttonBorderShape(.capsule)
             LetterGroup(letters: $vm.targetLetters, groupName: "Top", onRemoveLetter: { removePos in
                 vm.moveTo(group: Origin.stock, pos: removePos)
             }) { arr in
@@ -29,7 +31,10 @@ struct WordScreenView: View {
             }
             .font(.system(size: 13))
             .italic(true)
-        }
+        }.background(
+            // Use this background to match Jetpack Compose theme
+            Color(red:235.0/255,green:221.0/255,blue:254.0/255)
+        )
 
     }
 }
